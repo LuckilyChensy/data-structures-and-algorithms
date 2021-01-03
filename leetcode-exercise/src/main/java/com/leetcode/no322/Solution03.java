@@ -1,0 +1,63 @@
+package com.leetcode.no322;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Solution03 {
+
+    public static int getMinCountOfCoins() {
+        // 硬币面值的数组
+        int[] values = { 5, 3 };
+        // 总值
+        int total = 11;
+        // 初始值(0,0)
+        ArrayList<Integer> initialCounts = new ArrayList<>(Collections.nCopies(values.length, 0));
+        // 存储所有组合
+        ArrayList<ArrayList<Integer>> coinCombinations = new ArrayList<>();
+        // 求解所有组合（不去重）
+        getMinCountsHelper(total, values, initialCounts, coinCombinations);
+        // 输出答案
+        return getMinimumHelper(coinCombinations);
+    }
+
+    private static void getMinCountsHelper(int total, int[] values, ArrayList<Integer> currentCounts, ArrayList<ArrayList<Integer>> combinations) {
+        if (0 == total) { // 如果余额为0，说明当前组合成立，将组合加入到待选数组中
+            combinations.add(new ArrayList<Integer>(currentCounts));
+            return;
+        }
+
+        int valueLength = values.length;
+        for (int i = 0;  i < valueLength; i ++) { // 遍历所有面值
+            int currentValue = values[i];
+            if (currentValue > total) { // 如果面值大于当前总额，直接跳过
+                continue;
+            }
+
+            // 否则在当前面值数量组合上的对应位置加1
+            ArrayList<Integer> newCounts = new ArrayList<Integer>(currentCounts);
+            newCounts.set(i, newCounts.get(i)+1);
+            int rest = total - currentValue;
+
+            getMinCountsHelper(rest, values, newCounts, combinations); // 求解剩余额度所需硬币数量
+        }
+    }
+
+    private static int getMinimumHelper(ArrayList<ArrayList<Integer>> combinations) {
+        // 如果没有可用组合，返回-1
+        if (0 == combinations.size()) { return -1; }
+
+        int minCount = Integer.MAX_VALUE;
+        for (ArrayList<Integer> counts : combinations) {
+            int total = 0; // 求当前组合的硬币总数
+            for (int count : counts) { total += count; }
+
+            // 保留最小的
+            if (total < minCount) { minCount = total; }
+        }
+
+        return minCount;
+    }
+
+
+
+}
