@@ -1,4 +1,4 @@
-package com.leetcode.no070;
+package com.leetcode.no0070;
 /*
 * Java的话因为返回值为int，n=46时，结果会溢出，因此n < 46，那么就有：
 * */
