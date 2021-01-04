@@ -1,15 +1,14 @@
 package com.leetcode.bean;
 
 public class TreeNode {
-
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    public TreeNode(int val) {
-        this.val = val;
-        this.left = null;
-        this.right = null;
-    }
-
+    public TreeNode left;
+    public TreeNode right;
+    public int val;
+    public TreeNode() {}
+    public TreeNode(int val) { this.val = val; }
+    public TreeNode(int val, TreeNode left, TreeNode right) {
+          this.val = val;
+          this.left = left;
+          this.right = right;
+      }
 }
