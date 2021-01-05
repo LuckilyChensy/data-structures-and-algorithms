@@ -1,9 +1,6 @@
-package com.leetcode.no111;
+package com.leetcode.no0111;
 
 import com.leetcode.bean.TreeNode;
-
-import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * 给定一个二叉树，找出其最小深度。

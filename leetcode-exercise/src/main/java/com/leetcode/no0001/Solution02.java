@@ -1,14 +1,17 @@
-package com.leetcode.no1;
+package com.leetcode.no0001;
 
-public class Solution01 {
+public class Solution02 {
 
-    public static int[] twoSum(int[] arr, int target){
+    public static int[] twoSum(int[] nums, int target){
 
         int[] result = new int[2];
 
-        for (int i = 0; i < arr.length; i++) {
-            for(int j = i+1; j < arr.length; j++){
-               if(arr[i] + arr[j] == target){
+        for (int i = 0; i < nums.length; i++) {
+
+            int k = target - nums[i];
+
+            for(int j = i+1; j < nums.length; j++){
+               if(k == nums[j]){
                    result[0] = i;
                    result[1] = j;
                    break;
