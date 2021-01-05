@@ -47,6 +47,7 @@ public class Solution01 {
             int right = 0;
 
             int size = Integer.MAX_VALUE;
+            // 维护一个额外的变量 count 来记录所需元素的总数量
             int count = t.length();
             int start = 0;
 
@@ -62,10 +63,12 @@ public class Solution01 {
                 need[c]--;
 
                 if(count == 0){
+
                     while(left < right && need[s.charAt(left)] < 0){
                         need[s.charAt(left)]++;
                         left++;
                     }
+
                     // 不能右移时候挑战最小窗口大小，更新最小窗口开始的start
                     if(right - left + 1 < size){
                         size = right - left + 1;
