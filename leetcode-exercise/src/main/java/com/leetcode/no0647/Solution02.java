@@ -1,0 +1,19 @@
+package com.leetcode.no0647;
+
+public class Solution02 {
+    public int countSubstrings(String s){
+        int n = s.length();
+        boolean[][] dp = new boolean[n][n];
+        int count = 0;
+        for(int j = 0; j < n; j++){
+            for(int i = 0; i <= j; i++){
+                if(s.charAt(j) == s.charAt(i)){
+                    if(dp[i][j] = i==j || j - i == 1||dp[i+1][j-1]){
+                        count++;
+                    }
+                }
+            }
+        }
+        return count;
+    }
+}
