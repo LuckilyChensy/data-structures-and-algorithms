@@ -1,5 +1,8 @@
 package com.leetcode.no0042;
 
+/**
+ * Time O(n),Space:O(1)
+ */
 public class Solution01 {
 
     public int waterCanBeTrap(int[] height){
