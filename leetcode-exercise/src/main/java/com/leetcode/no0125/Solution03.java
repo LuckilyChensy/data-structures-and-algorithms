@@ -2,7 +2,7 @@ package com.leetcode.no0125;
 
 public class Solution03 {
 
-    // Time O(n) Space O(n)
+    // Time O(n) Space O(1)
     public boolean isPalindrome(String s) {
 
         int n = s.length();
