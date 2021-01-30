@@ -1,4 +1,4 @@
-package com.leetcode.no371;
+package com.leetcode.no0371;
 
 public class Solution01 {
 
@@ -9,7 +9,7 @@ public class Solution01 {
             a = sum;
             b = carry;
         }
-        return a|b;
+        return a;
     }
 
 }
