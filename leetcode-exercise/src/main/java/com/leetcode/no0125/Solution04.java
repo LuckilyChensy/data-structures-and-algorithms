@@ -2,41 +2,38 @@ package com.leetcode.no0125;
 
 public class Solution04 {
 
-    private boolean isAlphanumeric(char c){
-        return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9');
-    }
+    public boolean isPalindrome(String s) {
 
-    private boolean isEqualIgnoreCase(char a, char b){
-
-        if( a>='A' && a <= 'Z'){ a += 32;}
-        if( b>='A' && b <= 'Z'){ b += 32;}
-
-        return a == b;
-    }
-
-    public boolean isPalindrome(String s){
-
-        // 处理边界条件
-        if(s == null || s.length() == 0 ){
+        if(s == null || s.length() == 0){
             return true;
         }
 
-        int i = 0;
-        int j = s.length() - 1;
+        int left = 0;
+        int right = s.length() - 1;
+        char[] ch  = s.toCharArray();
 
-        //
-        for(;i < j; ++i,--j){
-            while(i < j && !isAlphanumeric(s.charAt(i))){
-                ++i;
+        while(left < right){
+            while(left < right && !isAlphanumeric(ch[left]) ){
+                ++left;
             }
-            while(i<j && !isAlphanumeric(s.charAt(j))){
-                --j;
+            while(left < right && !isAlphanumeric(ch[right])){
+                --right;
             }
-            if(i < j && !isEqualIgnoreCase(s.charAt(i),s.charAt(j))){
+            if(left<right && !isEqualIgnoreCase(ch[left],ch[right])){
                 return false;
             }
+            ++left;
+            --right;
         }
+
         return true;
+    }
+
+    private boolean isAlphanumeric(char c){return (c<='z' && c>='a')||(c>='A'&& c<='Z')||(c>='0'&& c<='9');}
+    private boolean isEqualIgnoreCase(char a,char b){
+        if(a<='Z' && a>='A'){a += 32;}
+        if(b<='Z' && b>='A'){b += 32;}
+        return a == b;
     }
 
 }
