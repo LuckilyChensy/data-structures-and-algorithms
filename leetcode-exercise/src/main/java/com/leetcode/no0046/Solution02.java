@@ -5,7 +5,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class Solution02 {
-    void permuteRec(List<Integer> nums,int start,List<List<Integer>> result){
+
+    private static void permuteRec(List<Integer> nums,int start,List<List<Integer>> result){
         if(start == nums.size()){
             result.add(new ArrayList<Integer>(nums));
         }else{
@@ -17,7 +18,7 @@ public class Solution02 {
         }
     }
 
-    public List<List<Integer>> permute(int[] nums){
+    public static List<List<Integer>> permute(int[] nums){
 
         if(nums == null || nums.length == 0){
             return new ArrayList<>();
@@ -33,5 +34,10 @@ public class Solution02 {
 
         permuteRec(list,0,result);
         return result;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {0,1,2,3};
+        System.out.println(permute(nums));
     }
 }
