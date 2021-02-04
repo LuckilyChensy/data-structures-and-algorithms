@@ -14,7 +14,7 @@ public class Solution01 {
             int max = sum;
             for(int j = i + 1; j < nums.length; j++){
                 sum += nums[j];
-                max = Math.max(max,sum);
+                max = Math.max(max,sum);        // 记录第 i 个元素起出现过的最大值
             }
             if(max > maxGlobal){
                 maxGlobal = max;
