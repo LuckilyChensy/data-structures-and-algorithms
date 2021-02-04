@@ -6,27 +6,15 @@ public class Solution03 {
 
     public int maxSubArray(int[] nums){
 
-        int n = nums.length;
+       int pre = 0;
+       int maxAns = nums[0];
 
-        if( n == 0){
-            return 0;
-        }
+       for(int x:nums){
+           pre = Math.max(pre+x,x);
+           maxAns=Math.max(maxAns,pre);
+       }
 
-        int[] dp = new int[n];
-
-        dp[0] = nums[0];
-
-        for(int i  = 1; i < n; i++){
-            dp[i] = Math.max(nums[i],nums[i]+dp[i-1]);
-        }
-
-        int res = Integer.MIN_VALUE;
-
-        for(int i = 0; i< dp.length;i++){
-            res = Math.max(res,dp[i]);
-        }
-
-        return res;
+       return maxAns;
 
     }
 
