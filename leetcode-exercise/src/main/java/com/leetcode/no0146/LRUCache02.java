@@ -3,6 +3,7 @@ package com.leetcode.no0146;
 import java.util.HashMap;
 import java.util.Map;
 
+// 哈希链表结构，循环链表方式
 public class LRUCache02 {
 
     private class Node{
