@@ -4,30 +4,27 @@ import com.leetcode.bean.ListNode;
 
 public class Solution01 {
 
-    public ListNode partitionAndPreserveOrder(ListNode head, int x){
+    public ListNode partition(ListNode head, int x){
 
-        if(head == null){
-            return null;
-        }
+        ListNode dummy1 = new ListNode(-1);
+        ListNode dummy2 = new ListNode(-1);
 
-        ListNode smaller = new ListNode(0);
-        ListNode greater = new ListNode(0);
+        ListNode p1 = dummy1;
+        ListNode p2 = dummy2;
 
-        ListNode ps = smaller;
-        ListNode pg = greater;
-
-        for(ListNode p = head; p!=null;p=p.next){
-            if(p.val<x){
-                ps.next = p;
-                ps = ps.next;
+        while(head != null){
+            if(head.val < x){
+                p1.next = head;
+                p1 = p1.next;
             }else{
-                pg.next = p;
-                pg = pg.next;
+                p2.next = head;
+                p2 = p2.next;
             }
+            head = head.next;
         }
 
-        ps.next = greater.next;
-        pg.next = null;
-        return smaller.next;
+        p1.next = dummy2.next;
+        p2.next = null;
+        return dummy1.next;
     }
 }
