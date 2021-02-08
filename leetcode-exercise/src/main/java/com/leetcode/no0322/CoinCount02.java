@@ -60,25 +60,30 @@ public class CoinCount02 {
         }
 
         for(int i = k; i <= valueCount - 1; i++){
-            // k位置已经排列好
+
             int t = values[k];
             values[k] = values[i];
             values[i]=t;
+
             minCount = Math.min(minCount, getMinCoinCountLoop(total, values, k + 1));
-            // 考虑后一位 // 回溯
+
             t = values[k];
             values[k] = values[i];
             values[i]=t;
+
         }
 
         return minCount;
     }
 
     public static void main(String[] args) {
+
         int values[] = {5,3};
         int total = 11;
         int minCoin = getMinCoinCountLoop(total, values, 0);
+
         System.out.println((minCoin == Integer.MAX_VALUE) ? -1 : minCoin);
+
     }
 
 }
