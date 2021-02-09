@@ -18,6 +18,7 @@ public class Solution01 {
 
             for(int j = 0; j < coins.length; j++){
                 // 当前余额不小于当前的银币值 && 前一状态不能是无穷大 && 上一状态在不同银币值的加持下对应的硬币数不同,下一状态保留最小值
+                // i >= coins[j] 也可以表示下标 不能小于 0
                 if(i >= coins[j] && dp[i - coins[j]]!=Integer.MAX_VALUE && dp[i - coins[j]]+1 < dp[i]){
                     dp[i] = dp[i-coins[j]] + 1;
                 }
@@ -29,6 +30,7 @@ public class Solution01 {
         }else{
             return dp[amount];
         }
+
     }
 
 }
