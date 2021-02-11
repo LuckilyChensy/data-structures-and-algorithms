@@ -2,18 +2,28 @@ package com.leetcode.no1797;
 
 public class Solution01 {
 
-    public int[] printNumbers(int n){
+    // x 基数 , n 次方
+    public double myPow(double x, int n){
 
-        int end = (int)Math.pow(10,n) - 1;
+        if( x == 0){ return 0; }
 
-        int[] res = new int[end];
+        double res = 1.0;
 
-        for(int i = 0; i < end; i++){
-            res[i] = i + 1;
+        if( n < 0){
+            x = 1/x;
+            n -= n;
+        }
+
+        while( n > 0){
+            if((n&1)==1){
+                res *= x;
+            }
+
+            x*=x;
+            n>>=1;
         }
 
         return res;
-
     }
 
 }
