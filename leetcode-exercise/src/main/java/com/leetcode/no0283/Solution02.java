@@ -3,6 +3,7 @@ package com.leetcode.no0283;
 public class Solution02 {
 
     public void moveZeroes(int[] nums){
+
         int n = nums.length;
         int left = 0;
         int right = 0;
