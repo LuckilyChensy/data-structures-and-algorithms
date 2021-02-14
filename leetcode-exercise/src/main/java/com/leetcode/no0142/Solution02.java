@@ -6,21 +6,30 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Solution02 {
-    public ListNode detectCycle(ListNode head){
-        ListNode fast = head;
+    public ListNode detectCycle(ListNode head) {
+
         ListNode slow = head;
+        ListNode fast = head;
 
-        while(fast != null && fast.next != null){
+        while(true){
 
-            fast = fast.next.next;
+            if(fast == null || fast.next == null){ return null; }
+
             slow = slow.next;
+            fast = fast.next.next;
 
-            if(fast == slow){
-                for(ListNode p = head; p != slow; p = p.next,slow = slow.next){
-                    return slow;
-                }
-            }
+            if(slow==fast){ break; }
+
         }
-        return null;
+
+        fast = head;
+
+        while(fast!=slow){
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return fast;
+
     }
 }
