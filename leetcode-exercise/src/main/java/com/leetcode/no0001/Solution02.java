@@ -1,33 +1,34 @@
 package com.leetcode.no0001;
 
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * 解决在检索 nums[i] 时,可以推算出目标数据时 target - nums[i], 那么在遍历一遍数组后应该可以确定目标数组中是否存在
+ * 如何准确定位到已遍历信息
+ *
+ * HashMap 的key是目标值, value 是在数组中的索引
+ */
 public class Solution02 {
 
-    public static int[] twoSum(int[] nums, int target){
+    public int[] twoSum(int[] nums, int target) {
 
-        int[] result = new int[2];
+        // HashMap 的key是目标值, value 是在数组中的索引
+        Map<Integer,Integer> map = new HashMap<Integer,Integer>();
 
-        for (int i = 0; i < nums.length; i++) {
+        for(int i = 0 ; i < nums.length; i++){
 
-            int k = target - nums[i];
+            int temp = target - nums[i];
 
-            for(int j = i+1; j < nums.length; j++){
-               if(k == nums[j]){
-                   result[0] = i;
-                   result[1] = j;
-                   break;
-               }
+            if(map.containsKey(temp)){
+                return new int[]{map.get(temp),i};
+            }else{
+                map.put(nums[i],i);
             }
+
         }
 
-        return result;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {2,7,11,15};
-        int target = 9;
-        int[] result = twoSum(nums, target);
-        System.out.println(result[0]);
-        System.out.println(result[1]);
+        return new int[]{-1,-1};
     }
 
 }
