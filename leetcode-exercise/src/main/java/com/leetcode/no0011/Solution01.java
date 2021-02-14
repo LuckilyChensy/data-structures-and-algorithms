@@ -1,23 +1,20 @@
 package com.leetcode.no0011;
 
+/**
+ * 暴力法求解
+ */
 public class Solution01 {
+
     public int maxArea(int[] height) {
 
-        int max = 0;
-        int i = 0;
-        int j = height.length - 1;
+        int maxContainer = Integer.MIN_VALUE;
 
-        while(i < j){
-            int cur = Math.min(height[i],height[j])*(j-i);
-            max = Math.max(max,cur);
-            if(height[i] < height[j]){
-                i++;
-            }else{
-                j--;
+        for(int i = 0; i< height.length; i++){
+            for(int j = i+1; j < height.length; j++){
+                maxContainer = Math.max(maxContainer,Math.min(height[i],height[j])*(j-i));
             }
         }
-
-        return max;
-
+        return maxContainer;
     }
+
 }
