@@ -1,8 +1,10 @@
 package com.leetcode.no0070;
+
 /*
 * Java的话因为返回值为int，n=46时，结果会溢出，因此n < 46，那么就有：
 * */
 public class Solution02 {
+
     public int climbStairs(int n) {
 
         int result = 0;
@@ -53,8 +55,10 @@ public class Solution02 {
             case 43: result = 701408733; break;
             case 44: result = 1134903170; break;
             case 45: result = 1836311903; break;
-
         }
+
         return result;
+
     }
+
 }
