@@ -12,28 +12,30 @@ public class Solution02 {
 
         Arrays.sort(nums);
 
-        for(int k = nums.length - 1; k>=2; --k){
+        for(int k = 0; k < nums.length-2; k++){
 
-            if(nums[k] < 0){ break ; }
+            if(nums[k] > 0){ break ; }
 
-            int target = -nums[k];
-            int i = 0;
-            int j = k - 1;
+            if( k > 0 && nums[k]==nums[k-1]){ continue; }
 
-            while(i < j){
+            int left = k+1;
+            int right = nums.length - 1;
 
-                if(nums[i] + nums[j] == target){
-                    result.add(Arrays.asList(nums[i],nums[j],nums[k]));
-                    while(i < j && nums[j+1] == nums[i]){ ++i; }
-                    while(i < j && nums[j-1] == nums[j]){ --j; }
-                    ++i;
-                    --j;
+            while(left < right){
+
+                int sum = nums[k] + nums[left] + nums[right];
+
+                if(sum < 0){
+                    while(left < right && nums[left] == nums[++left]);
+                }else if(sum > 0){
+                    while(left < right && nums[right] == nums[--right]);
+                }else{
+                    result.add(new ArrayList<>(Arrays.asList(nums[k],nums[left],nums[right])));
+                    while(left < right && nums[left] == nums[++left]);
+                    while(left < right && nums[right] == nums[--right]);
                 }
-
             }
-            while(k >=2 && nums[k-1] == nums[k]){ --k; }
         }
-
         return result;
     }
 
