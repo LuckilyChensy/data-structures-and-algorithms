@@ -16,6 +16,7 @@ public class Solution01 {
             for(int j = 0; j < i;j++){
                 if(dp[j] && nums[j]+j>=i){
                     dp[i]  = true;
+                    break;
                 }
             }
         }
