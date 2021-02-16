@@ -1,4 +1,4 @@
-package com.leetcode.bean;
+package bean;
 
 public class Node {
 

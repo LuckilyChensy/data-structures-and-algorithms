@@ -1,6 +1,6 @@
 package com.leetcode.no0876;
 
-import com.leetcode.bean.ListNode;
+import bean.ListNode;
 
 public class Solution02 {
     public ListNode middleNode(ListNode head) {

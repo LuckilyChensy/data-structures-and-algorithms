@@ -1,9 +1,6 @@
 package com.leetcode.no0141;
 
-import com.leetcode.bean.ListNode;
-
-import java.util.HashSet;
-import java.util.Set;
+import bean.ListNode;
 
 public class Solution02 {
 

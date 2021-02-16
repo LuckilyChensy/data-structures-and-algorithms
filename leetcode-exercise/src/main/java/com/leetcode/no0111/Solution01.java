@@ -1,6 +1,6 @@
 package com.leetcode.no0111;
 
-import com.leetcode.bean.TreeNode;
+import bean.TreeNode;
 
 /**
  * 给定一个二叉树，找出其最小深度。

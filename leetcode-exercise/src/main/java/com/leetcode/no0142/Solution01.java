@@ -1,6 +1,6 @@
 package com.leetcode.no0142;
 
-import com.leetcode.bean.ListNode;
+import bean.ListNode;
 import java.util.HashSet;
 import java.util.Set;
 

@@ -1,6 +1,6 @@
 package com.leetcode.no0236;
 
-import com.leetcode.bean.TreeNode;
+import bean.TreeNode;
 
 public class Solution01 {
 

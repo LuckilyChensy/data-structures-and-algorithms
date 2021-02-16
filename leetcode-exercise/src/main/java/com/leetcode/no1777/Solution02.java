@@ -1,9 +1,8 @@
 package com.leetcode.no1777;
 
-import com.leetcode.bean.ListNode;
+import bean.ListNode;
 
 import java.util.ArrayList;
-import java.util.Stack;
 
 public class Solution02 {
 

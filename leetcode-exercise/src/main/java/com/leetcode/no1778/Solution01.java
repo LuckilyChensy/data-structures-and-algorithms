@@ -1,6 +1,6 @@
 package com.leetcode.no1778;
 
-import com.leetcode.bean.TreeNode;
+import bean.TreeNode;
 
 import java.util.HashMap;
 

@@ -1,9 +1,6 @@
 package com.leetcode.no0142;
 
-import com.leetcode.bean.ListNode;
-
-import java.util.HashSet;
-import java.util.Set;
+import bean.ListNode;
 
 public class Solution02 {
     public ListNode detectCycle(ListNode head) {

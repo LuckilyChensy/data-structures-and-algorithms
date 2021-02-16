@@ -1,6 +1,6 @@
 package com.leetcode.no0019;
 
-import com.leetcode.bean.ListNode;
+import bean.ListNode;
 
 public class Solution01 {
     public ListNode removeNthFromEnd(ListNode head, int n) {

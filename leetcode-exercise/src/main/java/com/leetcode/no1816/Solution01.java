@@ -1,6 +1,6 @@
 package com.leetcode.no1816;
 
-import com.leetcode.bean.TreeNode;
+import bean.TreeNode;
 
 import java.util.LinkedList;
 import java.util.List;

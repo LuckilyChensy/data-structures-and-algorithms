@@ -1,6 +1,6 @@
 package com.leetcode.no0234;
 
-import com.leetcode.bean.ListNode;
+import bean.ListNode;
 
 public class Solution04 {
 

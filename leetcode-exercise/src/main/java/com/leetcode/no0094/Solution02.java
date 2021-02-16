@@ -1,7 +1,6 @@
 package com.leetcode.no0094;
 
-import com.leetcode.bean.ListNode;
-import com.leetcode.bean.TreeNode;
+import bean.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,11 +1,5 @@
 package com.leetcode.no0589;
 
-import com.leetcode.bean.Node;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
-
 public class Solution01 {
 
 //    public List<Integer> preOrder(Node root){
