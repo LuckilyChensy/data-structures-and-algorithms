@@ -1,12 +1,5 @@
 package com.leetcode.no1814;
 
-import bean.TreeNode;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-
 public class Solution01 {
 
     public double myPow(double x, int n) {
