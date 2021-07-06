@@ -15,12 +15,8 @@ public class Insertion {
         int len = nums.length;
 
         for(int i = 1; i < len; i++){
-           for(int j = i; j>0; j--){
-               if(nums[j] < nums[j-1]){
-                   swap(nums,j,j-1);
-               }else{
-                   break;
-               }
+           for(int j = i; j>0 && nums[j] < nums[j-1]; j--){
+               swap(nums,j,j-1);
            }
         }
 
