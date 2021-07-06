@@ -1,8 +1,6 @@
 package algs4.fundamentals.sort;
 
 import algs4.fundamentals.tool.SortHelper;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 /**
  * 选择排序： 不断的选择剩余元素中的最小值
