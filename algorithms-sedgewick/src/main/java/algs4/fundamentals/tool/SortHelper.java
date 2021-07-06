@@ -46,20 +46,4 @@ public class SortHelper {
         return true;
     }
 
-    public static void basicBenchSort(String className,int nums[]){
-        try{
-            Class sortClass = Class.forName("algs4.fundamentals.sort."+className);
-            Method sortMethod = sortClass.getMethod("sort",Integer[].class);
-
-            long startTime = System.currentTimeMillis();
-            sortMethod.invoke(sortClass.newInstance(),(Object)nums);
-            long endTime = System.currentTimeMillis();
-
-            assert isSorted( nums );
-            System.out.println( sortClass.getSimpleName()+ " : " + (endTime-startTime) + "ms" );
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-    }
 }
