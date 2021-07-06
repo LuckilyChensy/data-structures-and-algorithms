@@ -1,5 +1,7 @@
 package algs4.fundamentals.tool;
 
+import java.lang.reflect.Method;
+
 /**
  * @Description:
  * @Date:Created in 20:03 2021/7/6
@@ -32,5 +34,32 @@ public class SortHelper {
         System.out.println();
         return;
 
+    }
+
+    // nums 数组是否有序
+    public static boolean isSorted(int[] nums){
+        for( int i = 0 ; i < nums.length - 1 ; i++ ){
+            if( nums[i]>(nums[i+1])  ){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void basicBenchSort(String className,int nums[]){
+        try{
+            Class sortClass = Class.forName("algs4.fundamentals.sort."+className);
+            Method sortMethod = sortClass.getMethod("sort",Integer[].class);
+
+            long startTime = System.currentTimeMillis();
+            sortMethod.invoke(sortClass.newInstance(),(Object)nums);
+            long endTime = System.currentTimeMillis();
+
+            assert isSorted( nums );
+            System.out.println( sortClass.getSimpleName()+ " : " + (endTime-startTime) + "ms" );
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }
