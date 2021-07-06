@@ -1,5 +1,9 @@
 package algs4.fundamentals.sort;
 
+import algs4.fundamentals.tool.SortHelper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * 选择排序： 不断的选择剩余元素中的最小值
  * 1. 每次遍历数组中最小的那个元素
@@ -12,8 +16,6 @@ package algs4.fundamentals.sort;
  * 2. 同一份元素，有序数组和无序数组的效率是完全一样的
  */
 public class Selection {
-
-
     /**
      * 每次选择的都是最小值，升序排列
      * @param nums
@@ -41,11 +43,15 @@ public class Selection {
     }
 
     public static void main(String[] args) throws Exception{
-        int[] nums = {10,9,8,7,6,5,4,3,2,1,0};
+        int n = 10000;
+        int[] nums = SortHelper.generateRandomArray(n,0,n);
+
+        long startTime = System.currentTimeMillis();
         sort(nums);
-        for(Integer num:nums){
-            System.out.print(num + " ");
-        }
+        long endTime = System.currentTimeMillis();
+
+        System.out.println( " 选择排序 is Sorted: "+SortHelper.isSorted(nums)+ " : " + (endTime-startTime) + "ms" );
+
     }
 
 }
